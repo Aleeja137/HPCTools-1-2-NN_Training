@@ -1,0 +1,120 @@
+slurmstepd: info: Setting TMPDIR to /scratch/12885645. Previous errors about TMPDIR can be discarded
+2025-05-24 00:17:27.388744: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 AVX512F AVX512_VNNI FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-05-24 00:17:33.954895: I tensorflow/core/util/port.cc:104] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-05-24 00:18:01.840561: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer.so.7'; dlerror: libnvinfer.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /mnt/netapp1/Optcesga_FT2_RHEL7/2020/gentoo/22072020/usr/gr/lib64
+2025-05-24 00:18:01.855481: W tensorflow/compiler/xla/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libnvinfer_plugin.so.7'; dlerror: libnvinfer_plugin.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /mnt/netapp1/Optcesga_FT2_RHEL7/2020/gentoo/22072020/usr/gr/lib64
+2025-05-24 00:18:01.855493: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Cannot dlopen some TensorRT libraries. If you would like to use Nvidia GPU with TensorRT, please make sure the missing libraries mentioned above are installed properly.
+--2025-05-24 00:18:36--  https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json
+Resolviendo rajpurkar.github.io... 185.199.110.153, 185.199.111.153, 185.199.108.153, ...
+Conectando con rajpurkar.github.io[185.199.110.153]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 42123633 (40M) [application/json]
+Grabando a: “dataset/train.json”
+
+     0K .......... .......... .......... .......... ..........  0% 2,29M 18s
+    50K .......... .......... .......... .......... ..........  0% 7,75M 11s
+   100K .......... .......... .......... .......... ..........  0% 4,28M 11s
+   150K .......... .......... .......... .......... ..........  0% 15,0M 9s
+   200K .......... .......... .......... .......... ..........  0% 14,5M 7s
+   250K .......... .......... .......... .......... ..........  0% 5,20M 7s
+   ...
+ 40900K .......... .......... .......... .......... .......... 99%  321M 0s
+ 40950K .......... .......... .......... .......... .......... 99%  361M 0s
+ 41000K .......... .......... .......... .......... .......... 99%  164M 0s
+ 41050K .......... .......... .......... .......... .......... 99%  557M 0s
+ 41100K .......... .......... .......... ......               100%  417M=0,3s
+
+2025-05-24 00:18:37 (118 MB/s) - “dataset/train.json” guardado [42123633/42123633]
+
+--2025-05-24 00:18:38--  https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json
+Resolviendo rajpurkar.github.io... 185.199.109.153, 185.199.110.153, 185.199.111.153, ...
+Conectando con rajpurkar.github.io[185.199.109.153]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 4370528 (4,2M) [application/json]
+Grabando a: “dataset/dev.json”
+
+     0K .......... .......... .......... .......... ..........  1% 2,23M 2s
+    50K .......... .......... .......... .......... ..........  2% 8,79M 1s
+   100K .......... .......... .......... .......... ..........  3% 4,27M 1s
+   150K .......... .......... .......... .......... ..........  4% 14,8M 1s
+   200K .......... .......... .......... .......... ..........  5% 14,4M 1s
+   250K .......... .......... .......... .......... ..........  7% 5,65M 1s
+   ...
+  4150K .......... .......... .......... .......... .......... 98%  233M 0s
+  4200K .......... .......... .......... .......... .......... 99%  294M 0s
+  4250K .......... ........                                   100%  738M=0,1s
+
+2025-05-24 00:18:39 (35,6 MB/s) - “dataset/dev.json” guardado [4370528/4370528]
+
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForQuestionAnswering: ['cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.bias']
+- This IS expected if you are initializing BertForQuestionAnswering from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForQuestionAnswering from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForQuestionAnswering were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['qa_outputs.bias', 'qa_outputs.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Train size: 86821
+Val size: 20302
+Example:
+Passage: Beyoncé Giselle Knowles-Carter (/biːˈjɒnseɪ/ bee-YON-say) (born September 4, 1981) is an American singer, songwriter, record producer and actress. Born and raised in Houston, Texas, she performed in various singing and dancing competitions as a child, and rose to fame in the late 1990s as lead singer of R&B girl-group Destiny's Child. Managed by her father, Mathew Knowles, the group became one of the world's best-selling girl groups of all time. Their hiatus saw the release of Beyoncé's debut album, Dangerously in Love (2003), which established her as a solo artist worldwide, earned five Grammy Awards and featured the Billboard Hot 100 number-one singles "Crazy in Love" and "Baby Boy".
+Question: When did Beyonce start becoming popular?
+Answer: {'text': 'in the late 1990s', 'answer_start': 269}
+Answers skipped due to truncation: 2
+Answers skipped due to truncation: 0
+Using device: cuda:0
+
+Epoch 1 - Training:   0%|          | 0/1250 [00:00<?, ?it/s]
+Epoch 1 - Training:   0%|          | 1/1250 [00:35<12:27:51, 35.93s/it]
+...
+Epoch 1 - Training:   1%|          | 7/1250 [00:37<32:42,  1.58s/it]
+Epoch 1 - Training:   1%|          | 8/1250 [00:37<23:36,  1.14s/it]
+Epoch 1 - Training:   1%|          | 9/1250 [00:37<17:31,  1.18it/s]
+...
+Epoch 1 - Training:   1%|          | 12/1250 [00:38<08:37,  2.39it/s]
+Epoch 1 - Training:   1%|          | 13/1250 [00:38<07:16,  2.83it/s]
+...
+Epoch 1 - Training:  99%|█████████▉| 1240/1250 [04:52<00:02,  4.82it/s]
+Epoch 1 - Training:  99%|█████████▉| 1241/1250 [04:52<00:01,  4.79it/s]
+Epoch 1 - Training:  99%|█████████▉| 1242/1250 [04:52<00:01,  4.81it/s]
+...
+Epoch 1 - Training: 100%|██████████| 1250/1250 [04:54<00:00,  4.82it/s]
+Epoch 1 - Training: 100%|██████████| 1250/1250 [04:54<00:00,  4.25it/s]
+
+Epoch 1 - Evaluating:   0%|          | 0/250 [00:00<?, ?it/s]
+Epoch 1 - Evaluating:   1%|          | 2/250 [00:00<00:12, 19.86it/s]
+Epoch 1 - Evaluating:   2%|▏         | 4/250 [00:00<00:12, 19.48it/s]
+Epoch 1 - Evaluating:   2%|▏         | 6/250 [00:00<00:12, 19.35it/s]
+...
+Epoch 1 - Evaluating:  99%|█████████▉| 248/250 [00:12<00:00, 19.14it/s]
+Epoch 1 - Evaluating: 100%|██████████| 250/250 [00:13<00:00, 19.17it/s]
+Epoch 1 - Evaluating: 100%|██████████| 250/250 [00:13<00:00, 19.17it/s]
+Epoch 1 | Train Loss: 2.1868 | Val Loss: 1.5594
+
+Epoch 2 - Training:   0%|          | 0/1250 [00:00<?, ?it/s]
+...
+Epoch 2 - Training: 100%|██████████| 1250/1250 [04:19<00:00,  4.81it/s]
+
+Epoch 2 - Evaluating:   0%|          | 0/250 [00:00<?, ?it/s]
+...
+Epoch 2 - Evaluating: 100%|██████████| 250/250 [00:13<00:00, 19.17it/s]
+Epoch 2 | Train Loss: 0.9028 | Val Loss: 1.5270
+
+Epoch 3 - Training:   0%|          | 1/1250 [00:00<04:27,  4.67it/s]
+...
+Epoch 3 - Training: 100%|██████████| 1250/1250 [04:19<00:00,  4.82it/s]
+
+Epoch 3 - Evaluating:   1%|          | 2/250 [00:00<00:12, 19.64it/s]
+...
+Epoch 3 - Evaluating: 100%|██████████| 250/250 [00:13<00:00, 19.16it/s]
+Epoch 3 | Train Loss: 0.5205 | Val Loss: 1.6109
+
+Epoch 4 - Training:   0%|          | 1/1250 [00:00<04:26,  4.68it/s]
+...
+Epoch 4 - Training: 100%|██████████| 1250/1250 [04:19<00:00,  4.82it/s]
+
+Epoch 4 - Evaluating:   1%|          | 2/250 [00:00<00:12, 19.69it/s]
+...
+Epoch 4 - Evaluating: 100%|██████████| 250/250 [00:13<00:00, 19.17it/s]
+
+Epoch 4 | Train Loss: 0.3357 | Val Loss: 1.7596
+Total Time: 1125.2345921993256
+Saved loss curve at output/loss_curve.png
